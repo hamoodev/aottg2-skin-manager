@@ -1,0 +1,71 @@
+:root {
+    --bg-deep: #080b12;
+    --bg-primary: #0c1019;
+    --bg-secondary: #111827;
+    --bg-elevated: #1a2235;
+    --bg-hover: rgba(255, 255, 255, 0.035);
+
+    --accent-green: #2d8a6e;
+    --accent-green-bright: #3bbd8f;
+    --accent-amber: #d4873f;
+    --accent-amber-bright: #e8a355;
+    --accent-red: #c93545;
+    --accent-red-bright: #e04555;
+
+    --text-primary: #e8e4dc;
+    --text-secondary: #8a8578;
+    --text-muted: #4a4740;
+
+    --border: rgba(255, 255, 255, 0.06);
+    --border-accent: rgba(45, 138, 110, 0.3);
+
+    --font-display: 'Teko', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+}
+
+html {
+    background-color: var(--bg-deep);
+    color: var(--text-primary);
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+}
+
+#app {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Atmospheric overlays */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+}
+
+.scanlines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.025) 2px,
+        rgba(0, 0, 0, 0.025) 4px
+    );
+}
