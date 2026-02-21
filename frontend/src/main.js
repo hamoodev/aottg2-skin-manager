@@ -3,7 +3,7 @@ import './app.css';
 
 import {GetSkins, DeleteSet, CreateSet, UpdateSet, LoginWithDiscord, UploadImage} from '../wailsjs/go/main/App';
 
-const API_BASE = 'http://localhost:3000';
+const API_BASE = 'https://api.aottg2-skin-manager.hamood.dev';
 const CDN_BASE = 'https://cdn.hamood.dev';
 const CATEGORIES = ['Human', 'Titan', 'Shifter', 'Skybox'];
 const CATEGORY_COLORS = {
@@ -643,7 +643,7 @@ function renderSetDetail(header, set) {
                 const displayName = result.url || result.key;
                 setStatus(`UPLOADED \u2014 ${displayName} \u2192 ${fieldName}${arrIndex !== undefined ? '[' + arrIndex + ']' : ''}`);
             } catch (err) {
-                setStatus('UPLOAD ERROR: ' + err.message);
+                setStatus('UPLOAD ERROR: ' + (err.message || err));
             }
         });
     });
@@ -936,7 +936,7 @@ function handlePublish(set) {
             img.style.display = 'block';
             placeholder.style.display = 'none';
         } catch (err) {
-            setStatus('PREVIEW UPLOAD ERROR: ' + err.message);
+            setStatus('PREVIEW UPLOAD ERROR: ' + (err.message || err));
         }
     });
 

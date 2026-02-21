@@ -17,7 +17,7 @@ import (
 	wailsRuntime "github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
-const apiBase = "http://localhost:3000"
+const apiBase = "https://api.aottg2-skin-manager.hamood.dev"
 const cdnBase = "https://cdn.hamood.dev"
 
 type App struct {
@@ -389,31 +389,31 @@ func makeDefaultSet(category string, name string) map[string]interface{} {
 	switch category {
 	case "Human":
 		return map[string]interface{}{
-			"Hair":            "",
-			"Eye":             "",
-			"Glass":           "",
-			"Face":            "",
-			"Skin":            "",
-			"Costume":         "",
-			"Logo":            "",
-			"GearL":           "",
-			"GearR":           "",
-			"Gas":             "",
-			"Hoodie":          "",
-			"WeaponTrail":     "",
-			"Horse":           "",
-			"ThunderspearL":   "",
-			"ThunderspearR":   "",
-			"HookL":           "",
-			"HookLTiling":     float64(1),
-			"HookR":           "",
-			"HookRTiling":     float64(1),
-			"Hat":             "",
-			"Head":            "",
-			"Back":            "",
-			"Name":            name,
-			"Preset":          false,
-			"UniqueId":        id,
+			"Hair":          "",
+			"Eye":           "",
+			"Glass":         "",
+			"Face":          "",
+			"Skin":          "",
+			"Costume":       "",
+			"Logo":          "",
+			"GearL":         "",
+			"GearR":         "",
+			"Gas":           "",
+			"Hoodie":        "",
+			"WeaponTrail":   "",
+			"Horse":         "",
+			"ThunderspearL": "",
+			"ThunderspearR": "",
+			"HookL":         "",
+			"HookLTiling":   float64(1),
+			"HookR":         "",
+			"HookRTiling":   float64(1),
+			"Hat":           "",
+			"Head":          "",
+			"Back":          "",
+			"Name":          name,
+			"Preset":        false,
+			"UniqueId":      id,
 		}
 	case "Titan":
 		eightEmpty := make([]interface{}, 8)
