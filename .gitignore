@@ -9,3 +9,4 @@ app.md
 frontend/.env.development
 frontend/.env.development.local
 frontend/.env.local
+frontend/.env
