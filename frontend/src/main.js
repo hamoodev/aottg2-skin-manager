@@ -642,6 +642,7 @@ function renderSetDetail(header, set) {
                 }
                 const displayName = result.url || result.key;
                 setStatus(`UPLOADED \u2014 ${displayName} \u2192 ${fieldName}${arrIndex !== undefined ? '[' + arrIndex + ']' : ''}`);
+                await handleSave(set);
             } catch (err) {
                 setStatus('UPLOAD ERROR: ' + (err.message || err));
             }
