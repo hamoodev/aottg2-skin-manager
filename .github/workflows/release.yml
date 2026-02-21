@@ -56,11 +56,13 @@ jobs:
           generate_release_notes: true
           files: build/bin/AOTTG2-Skin-Manager-*.exe
 
+      - name: Install butler
+        run: |
+          Invoke-WebRequest -Uri "https://broth.itch.zone/butler/windows-amd64/LATEST/archive/default" -OutFile butler.zip
+          Expand-Archive butler.zip -DestinationPath butler
+        shell: pwsh
+
       - name: Upload to itch.io
-        uses: robpc/itchio-upload-action@v1
-        with:
-          path: build/bin/aottg2-skin-manager.exe
-          project: aottg2-skin-manager/aottg2-skin-manager
-          channel: windows
-          version: ${{ github.ref_name }}
-          api-key: ${{ secrets.BUTLER_API_KEY }}
+        run: butler/butler push build/bin/aottg2-skin-manager.exe aottg2-skin-manager/aottg2-skin-manager:windows --userversion ${{ github.ref_name }}
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
