@@ -36,7 +36,7 @@ jobs:
           VITE_CDN_BASE: https://cdn.hamood.dev
 
       - name: Embed icon and manifest
-        run: go install github.com/nickvdyck/go-winres@latest && go-winres make
+        run: go install github.com/tc-hib/go-winres@latest && go-winres make
 
       - name: Build binary
         run: go build -tags desktop,production -ldflags "-w -s -H windowsgui" -o build/bin/aottg2-skin-manager.exe
