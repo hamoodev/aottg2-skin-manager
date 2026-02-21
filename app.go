@@ -17,8 +17,15 @@ import (
 	wailsRuntime "github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
-const apiBase = "https://api.aottg2-skin-manager.hamood.dev"
-const cdnBase = "https://cdn.hamood.dev"
+var apiBase = envOrDefault("API_BASE", "https://api.aottg2-skin-manager.hamood.dev")
+var cdnBase = envOrDefault("CDN_BASE", "https://cdn.hamood.dev")
+
+func envOrDefault(key, fallback string) string {
+	if v := os.Getenv(key); v != "" {
+		return v
+	}
+	return fallback
+}
 
 type App struct {
 	ctx context.Context

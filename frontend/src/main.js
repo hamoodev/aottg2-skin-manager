@@ -3,8 +3,8 @@ import './app.css';
 
 import {GetSkins, DeleteSet, CreateSet, UpdateSet, LoginWithDiscord, UploadImage} from '../wailsjs/go/main/App';
 
-const API_BASE = 'https://api.aottg2-skin-manager.hamood.dev';
-const CDN_BASE = 'https://cdn.hamood.dev';
+const API_BASE = import.meta.env.VITE_API_BASE;
+const CDN_BASE = import.meta.env.VITE_CDN_BASE;
 const CATEGORIES = ['Human', 'Titan', 'Shifter', 'Skybox'];
 const CATEGORY_COLORS = {
     Human: '#4a9eff',

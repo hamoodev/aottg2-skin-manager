@@ -5,3 +5,7 @@ frontend/dist
 plan.md
 backend.md
 app.md
+.env.dev
+frontend/.env.development
+frontend/.env.development.local
+frontend/.env.local
